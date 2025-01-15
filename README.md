@@ -21,18 +21,17 @@ Este proyecto implementa un sistema CRUD (Crear, Leer, Actualizar, Eliminar) uti
 1. Clona este repositorio:
     ```bash
     git clone https://github.com/SameuelxD/ProyectoNotebook.git
-    cd proyecto-chromadb
+    cd proyectonotebook
     ```
 
-2. Crea un entorno virtual y activa:
+2. Instala las dependencias necesarias:
     ```bash
-    python -m venv env
-    source env/bin/activate  # En Windows: env\Scripts\activate
+    pip install os SentenceTransformer chromadb matplotlib.pyplot
     ```
 
-3. Instala las dependencias necesarias:
+3. Ejecuta el proyecto
     ```bash
-    pip install -r requirements.txt
+    python main.py
     ```
 
 ---

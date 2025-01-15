@@ -2,6 +2,7 @@ import os
 from typing import List, Any, Dict
 from sentence_transformers import SentenceTransformer
 import chromadb
+import matplotlib.pyplot as plt
 
 # Configuración de ChromaDB sin la configuración antigua
 chroma_client = chromadb.Client()
@@ -74,22 +75,41 @@ def query_with_filters(query_text: str, filters: Dict[str, Any], top_k: int = 5)
         print("No se encontraron resultados para la consulta.")
     return results if results else "No results found with the given filters"
 
-if __name__ == "__main__":
-    print("--- Inserting entries ---")
-    create_entry("1", "ChromaDB is a vector database", {"category": "database"})
-    create_entry("2", "Hugging Face provides AI models", {"category": "AI"})
+def demo():
+    # Crear entradas
+    create_entry("1", "ChromaDB es una base de datos vectorial", {"categoria": "base de datos"})
+    create_entry("2", "Hugging Face provee modelos de IA", {"categoria": "IA"})
 
-    print("--- Reading entry ---")
+    # Leer entrada
+    print("\n--- Leer entrada ID 1 ---")
     print(read_entry("1"))
 
-    print("--- Updating entry ---")
-    update_entry("1", "ChromaDB is a powerful vector database", {"category": "database", "updated": True})
+    # Actualizar entrada
+    print("\n--- Actualizar entrada ID 1 ---")
+    update_entry("1", "ChromaDB es una potente base de datos vectorial", {"categoria": "base de datos", "actualizado": True})
     print(read_entry("1"))
 
-    print("--- Querying with filters ---")
-    filters = {"category": "database"}
-    print(query_with_filters("What is ChromaDB?", filters))
+    # Consultar con filtros
+    print("\n--- Consulta avanzada ---")
+    filters = {"categoria": "base de datos"}
+    results = query_with_filters("¿Qué es ChromaDB?", filters)
+    print(results)
 
-    print("--- Deleting entry ---")
+    # Eliminar entrada
+    print("\n--- Eliminar entrada ID 1 ---")
     delete_entry("1")
     print(read_entry("1"))
+
+def plot_query_results(results):
+    if results:
+        documents = [doc for doc in results["documents"]]
+        scores = [1 for _ in documents]  # Dummy scores para visualización
+
+        plt.barh(documents, scores, color="blue")
+        plt.xlabel("Relevancia")
+        plt.title("Resultados de la consulta")
+        plt.show()
+
+if __name__ == "__main__":
+    demo()
+
