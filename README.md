@@ -1,4 +1,4 @@
-
+# Desarrollado por Jose Samuel Alvarez Silva , 57 3144220093
 # Proyecto CRUD con Base de Datos Vectorial (ChromaDB)
 
 Este proyecto implementa un sistema CRUD (Crear, Leer, Actualizar, Eliminar) utilizando una base de datos vectorial (ChromaDB) y embeddings generados por modelos de `Hugging Face`. También incluye ejemplos avanzados de consultas con condiciones y filtros personalizados.
