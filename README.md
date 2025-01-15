@@ -12,7 +12,7 @@ Este proyecto implementa un sistema CRUD (Crear, Leer, Actualizar, Eliminar) uti
 3. [Descripción de los métodos CRUD](#descripción-de-los-métodos-crud)
 4. [Funcionamiento de los embeddings](#funcionamiento-de-los-embeddings)
 5. [Uso de consultas avanzadas](#uso-de-consultas-avanzadas)
-6. [Ejemplos y gráficos](#ejemplos-y-gráficos)
+
 
 ---
 
