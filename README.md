@@ -113,19 +113,3 @@ query_with_filters("¿Qué es ChromaDB?", {"categoria": "base de datos"}, top_k=
 
 ---
 
-## Ejemplos y gráficos
-
-### Inserción de datos
-![Insertar Datos](images/insert_example.png)
-
-### Consultas avanzadas
-![Consulta Avanzada](images/query_example.png)
-
-### Gráfico de resultados
-![Gráfico de Resultados](images/results_plot.png)
-
----
-
-## Notas finales
-
-Este proyecto está diseñado como una demostración de uso de bases de datos vectoriales y su integración con modelos de embeddings. Puedes adaptarlo para aplicaciones más complejas, como motores de búsqueda semánticos o sistemas de recomendación.
